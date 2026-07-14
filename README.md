@@ -40,3 +40,15 @@ Updated proof language:
 - 4.5M+ Eyes Reached
 - Stories shared with more than 4.5 million eyes
 - A decade of storytelling across sports, business and digital media
+
+## Instagram section update
+
+The Instagram portfolio section is now one unified clickable advertisement.
+
+Removed:
+- Duplicate Instagram header
+- Separate Follow on Instagram button
+- Duplicate View My Latest Work button
+- Nested advertisement window
+
+The entire retro advertisement links directly to @merrickspanes.

@@ -775,3 +775,34 @@ textarea { resize: vertical; }
 @media (max-width: 700px) {
   .fit-grid-four { grid-template-columns: 1fr; }
 }
+
+
+/* Single-piece Instagram advertisement */
+.instagram-single-ad {
+  display: block;
+  overflow: hidden;
+  border: 3px solid var(--ink);
+  border-radius: 22px;
+  background: var(--paper);
+  box-shadow: 10px 10px 0 var(--green);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.instagram-single-ad:hover,
+.instagram-single-ad:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow: 14px 14px 0 var(--gold);
+}
+
+.instagram-single-ad img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  .instagram-single-ad {
+    border-radius: 14px;
+    box-shadow: 6px 6px 0 var(--green);
+  }
+}
