@@ -41,14 +41,19 @@ Updated proof language:
 - Stories shared with more than 4.5 million eyes
 - A decade of storytelling across sports, business and digital media
 
-## Instagram section update
 
-The Instagram portfolio section is now one unified clickable advertisement.
+## Audience-based pricing update
 
-Removed:
-- Duplicate Instagram header
-- Separate Follow on Instagram button
-- Duplicate View My Latest Work button
-- Nested advertisement window
+The pricing section now begins with a dropdown.
 
-The entire retro advertisement links directly to @merrickspanes.
+Visitors can select:
+- Business growth
+- Sports
+- Real estate
+- Events and campaigns
+- Creators and platforms
+- Editing
+- Photography
+- All pricing
+
+Only matching packages are revealed. The full pricing wall is hidden until the visitor chooses a need.

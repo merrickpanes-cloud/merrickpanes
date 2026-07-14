@@ -190,7 +190,35 @@
           <p>Final pricing depends on scope, schedule, travel, crew, licensing and deliverables. Custom campaigns are quoted around the outcome.</p>
         </div>
 
-        <div class="offer-banner">
+        <div class="pricing-selector-card">
+          <div>
+            <p class="eyebrow">Choose your path</p>
+            <h3>What do you need help with?</h3>
+            <p>Select the audience or service type that best matches your project. Only the relevant pricing options will appear.</p>
+          </div>
+          <label class="pricing-select-label" for="pricingAudience">
+            Select your need
+            <select id="pricingAudience">
+              <option value="">Choose an option</option>
+              <option value="business">Grow my business or get more bookings</option>
+              <option value="sports">Promote an athlete, team or sports program</option>
+              <option value="real-estate">Market a property or real estate brand</option>
+              <option value="events">Promote or capture an event, launch or campaign</option>
+              <option value="creators">Grow a creator platform or YouTube channel</option>
+              <option value="editing">I need editing or post-production</option>
+              <option value="photography">I need photography</option>
+              <option value="all">Show all pricing</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="pricing-empty-state" id="pricingEmptyState">
+          <span>SELECT</span>
+          <h3>Choose what you need to reveal your packages.</h3>
+          <p>This keeps the pricing simple and shows only the offers most relevant to you.</p>
+        </div>
+
+        <div class="offer-banner pricing-group" data-audience="business">
           <div>
             <p class="eyebrow light">Recurring revenue focus</p>
             <h3>Monthly Growth Partnerships</h3>
@@ -204,7 +232,7 @@
         </div>
 
         <div class="pricing-grid">
-          <article class="price-panel" id="sports-pricing">
+          <article class="price-panel pricing-group" id="sports-pricing" data-audience="sports">
             <div class="price-heading"><span>01</span><h3>Sports Media</h3></div>
             <div class="price-row"><div><strong>Game Photography</strong><small>Edited athlete or game gallery</small></div><b>$197</b></div>
             <div class="price-row"><div><strong>Game Video Coverage</strong><small>Athlete-focused coverage or organized clips</small></div><b>$247</b></div>
@@ -213,7 +241,7 @@
             <div class="price-row"><div><strong>Athlete Documentary</strong><small>Interviews, training, games and story-driven film</small></div><b>$1,500+</b></div>
           </article>
 
-          <article class="price-panel">
+          <article class="price-panel pricing-group" data-audience="business events">
             <div class="price-heading"><span>02</span><h3>Business Campaigns</h3></div>
             <div class="price-row"><div><strong>Social Media Video</strong><small>One vertical video up to 90 seconds</small></div><b>$150</b></div>
             <div class="price-row"><div><strong>Brand Story Video</strong><small>Planning, production and cinematic edit</small></div><b>$699</b></div>
@@ -222,7 +250,7 @@
             <div class="price-row"><div><strong>Documentary Film</strong><small>Pre-production through final delivery</small></div><b>$1,500+</b></div>
           </article>
 
-          <article class="price-panel">
+          <article class="price-panel pricing-group" data-audience="photography business sports events real-estate">
             <div class="price-heading"><span>03</span><h3>Photography</h3></div>
             <div class="price-row"><div><strong>Portrait Session</strong><small>Up to 1 hour · 2 locations · 25+ photos</small></div><b>$199</b></div>
             <div class="price-row"><div><strong>Athlete Branding</strong><small>Up to 90 minutes · multiple looks · 40+ photos</small></div><b>$299</b></div>
@@ -231,7 +259,7 @@
             <div class="price-row"><div><strong>Headshots</strong><small>30 minutes · 10 edited images</small></div><b>$150</b></div>
           </article>
 
-          <article class="price-panel" id="real-estate-pricing">
+          <article class="price-panel pricing-group" id="real-estate-pricing" data-audience="real-estate">
             <div class="price-heading"><span>04</span><h3>Real Estate Marketing</h3></div>
             <div class="price-row"><div><strong>Listing Photography</strong><small>Interior, exterior, MLS-ready and high-resolution files</small></div><b>$199+</b></div>
             <div class="price-row"><div><strong>Premium Listing Photography</strong><small>Expanded gallery, detail images and premium presentation</small></div><b>$299+</b></div>
@@ -240,7 +268,7 @@
             <div class="price-row"><div><strong>Agent Branding Content Day</strong><small>Headshots, lifestyle images and short-form video</small></div><b>$399+</b></div>
           </article>
 
-          <article class="price-panel">
+          <article class="price-panel pricing-group" data-audience="creators business">
             <div class="price-heading"><span>05</span><h3>Platforms & Insights</h3></div>
             <div class="price-row"><div><strong>Content Audit</strong><small>Positioning, gaps, CTA review and recommendations</small></div><b>$149+</b></div>
             <div class="price-row"><div><strong>Platform Audit</strong><small>Channel review and 30-day action plan</small></div><b>$149+</b></div>
@@ -249,7 +277,7 @@
             <div class="price-row"><div><strong>Performance Report</strong><small>What worked and what to do next</small></div><b>$99+</b></div>
           </article>
 
-          <article class="price-panel">
+          <article class="price-panel pricing-group" data-audience="editing creators business sports events real-estate">
             <div class="price-heading"><span>06</span><h3>Editing</h3></div>
             <div class="price-row"><div><strong>Video Editing</strong><small>Project-based or hourly support</small></div><b>$75/hr</b></div>
             <div class="price-row"><div><strong>YouTube Editing</strong><small>Long-form content and platform packaging</small></div><b>$199+</b></div>
@@ -257,7 +285,7 @@
             <div class="price-row"><div><strong>Monthly Editing Support</strong><small>Reserved recurring post-production</small></div><b>Quote</b></div>
           </article>
 
-          <article class="price-panel price-panel-dark">
+          <article class="price-panel price-panel-dark pricing-group" data-audience="sports">
             <div class="price-heading"><span>07</span><h3>Team & Season Partnerships</h3></div>
             <p class="consulting-copy">Designed for programs that need consistent coverage, storytelling, recruiting media, sponsor content or YouTube episodes.</p>
             <ul class="consulting-list">
@@ -270,7 +298,7 @@
           </article>
         </div>
 
-        <div class="addons-bar">
+        <div class="addons-bar pricing-addons" id="pricingAddons">
           <span><b>Additional location</b> +$75</span>
           <span><b>Rush delivery</b> +$100</span>
           <span><b>Extra short-form edit</b> +$75</span>

@@ -65,3 +65,64 @@ document.querySelectorAll('[data-service]').forEach(link => {
     else if (requested.includes('Business')) select.value = 'Monthly Content';
   });
 });
+
+
+// Audience-based pricing reveal
+const pricingAudience = document.getElementById("pricingAudience");
+const pricingGroups = document.querySelectorAll(".pricing-group");
+const pricingEmptyState = document.getElementById("pricingEmptyState");
+const pricingAddons = document.getElementById("pricingAddons");
+
+function updatePricingDisplay(value) {
+  let visibleCount = 0;
+
+  pricingGroups.forEach((group) => {
+    const audiences = (group.dataset.audience || "").split(/\s+/);
+    const show = value === "all" || (value && audiences.includes(value));
+    group.classList.toggle("is-visible", Boolean(show));
+    if (show) visibleCount += 1;
+  });
+
+  if (pricingEmptyState) {
+    pricingEmptyState.hidden = Boolean(value);
+  }
+
+  if (pricingAddons) {
+    pricingAddons.classList.toggle("is-visible", Boolean(value));
+  }
+}
+
+if (pricingAudience) {
+  updatePricingDisplay(pricingAudience.value);
+  pricingAudience.addEventListener("change", (event) => {
+    updatePricingDisplay(event.target.value);
+  });
+}
+
+// Service links can preselect the closest pricing audience.
+const pricingAudienceMap = {
+  "Monthly Business Growth Content": "business",
+  "Sports Media Package": "sports",
+  "Team / Program Content": "sports",
+  "Team / Season Partnership": "sports",
+  "Promotional Campaign": "events",
+  "Real Estate Marketing": "real-estate",
+  "Platform / YouTube Strategy": "creators",
+  "Analytics / Content Insights": "creators",
+  "Editing Services": "editing",
+  "Photography": "photography"
+};
+
+document.querySelectorAll('a[href="#pricing"][data-service], a[href="#sports-pricing"], a[href="#real-estate-pricing"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    let selection = pricingAudienceMap[link.dataset.service];
+
+    if (link.getAttribute("href") === "#sports-pricing") selection = "sports";
+    if (link.getAttribute("href") === "#real-estate-pricing") selection = "real-estate";
+
+    if (pricingAudience && selection) {
+      pricingAudience.value = selection;
+      updatePricingDisplay(selection);
+    }
+  });
+});

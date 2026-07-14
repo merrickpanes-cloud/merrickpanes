@@ -650,33 +650,6 @@ textarea { resize: vertical; }
   font-size: 30px;
 }
 .instagram-feed-shell { min-height: 470px; }
-.instagram-ad-shell {
-  min-height: auto;
-  padding: 26px;
-  background:
-    radial-gradient(circle at 18% 20%, rgba(188,153,72,.16), transparent 25%),
-    radial-gradient(circle at 82% 72%, rgba(45,80,58,.12), transparent 28%),
-    linear-gradient(135deg, #efe5cf, #e1d6bb);
-}
-.instagram-ad-wrap {
-  display: grid;
-  gap: 24px;
-}
-.instagram-ad-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 3px solid var(--ink);
-  border-radius: 18px;
-  box-shadow: 8px 8px 0 rgba(14, 31, 20, 0.15);
-}
-.instagram-ad-cta {
-  display: flex;
-  justify-content: center;
-}
-.instagram-ad-cta .button {
-  min-width: 280px;
-}
 .instagram-placeholder {
   min-height: 470px;
   display: grid;
@@ -739,14 +712,6 @@ textarea { resize: vertical; }
   .work-proof-grid { grid-template-columns: 1fr; }
   .instagram-feed-shell,
   .instagram-placeholder { min-height: 400px; }
-  .instagram-ad-shell {
-    min-height: auto;
-    padding: 18px;
-  }
-  .instagram-ad-cta .button {
-    width: 100%;
-    min-width: 0;
-  }
 }
 
 
@@ -777,6 +742,73 @@ textarea { resize: vertical; }
 }
 
 
+/* Audience-based pricing selector */
+.pricing-selector-card {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 30px;
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  background: #e8dfca;
+  box-shadow: 8px 8px 0 var(--gold);
+}
+.pricing-selector-card h3 {
+  margin: 5px 0 10px;
+  font: clamp(28px, 4vw, 44px)/1 "Archivo Black", sans-serif;
+  text-transform: uppercase;
+}
+.pricing-selector-card p { margin-bottom: 0; }
+.pricing-select-label {
+  display: grid;
+  gap: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.pricing-select-label select {
+  width: 100%;
+  min-height: 58px;
+  padding: 0 46px 0 16px;
+  border: 3px solid var(--ink);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 700 16px/1.2 "DM Sans", sans-serif;
+  cursor: pointer;
+}
+.pricing-empty-state {
+  display: grid;
+  place-items: center;
+  min-height: 280px;
+  margin-bottom: 24px;
+  padding: 35px;
+  text-align: center;
+  border: 3px dashed var(--green);
+  border-radius: 20px;
+  background: rgba(232, 223, 202, .6);
+}
+.pricing-empty-state span {
+  color: var(--gold);
+  font: clamp(50px, 9vw, 100px)/.8 "Archivo Black", sans-serif;
+  opacity: .8;
+}
+.pricing-empty-state h3 {
+  max-width: 700px;
+  margin: 20px 0 8px;
+  font: clamp(25px, 4vw, 42px)/1 "Archivo Black", sans-serif;
+  text-transform: uppercase;
+}
+.pricing-empty-state p { max-width: 620px; margin: 0; }
+.pricing-group { display: none; }
+.pricing-group.is-visible { display: block; }
+.offer-banner.pricing-group.is-visible { display: grid; }
+.price-panel.pricing-group.is-visible { display: block; }
+.pricing-addons { display: none; }
+.pricing-addons.is-visible { display: flex; }
+
 /* Single-piece Instagram advertisement */
 .instagram-single-ad {
   display: block;
@@ -787,22 +819,19 @@ textarea { resize: vertical; }
   box-shadow: 10px 10px 0 var(--green);
   transition: transform .2s ease, box-shadow .2s ease;
 }
-
 .instagram-single-ad:hover,
 .instagram-single-ad:focus-visible {
   transform: translate(-3px, -3px);
   box-shadow: 14px 14px 0 var(--gold);
 }
-
 .instagram-single-ad img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-@media (max-width: 700px) {
-  .instagram-single-ad {
-    border-radius: 14px;
-    box-shadow: 6px 6px 0 var(--green);
-  }
+@media (max-width: 760px) {
+  .pricing-selector-card { grid-template-columns: 1fr; padding: 23px; }
+  .pricing-addons.is-visible { display: grid; }
+  .instagram-single-ad { border-radius: 14px; box-shadow: 6px 6px 0 var(--green); }
 }
