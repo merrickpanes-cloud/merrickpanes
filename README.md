@@ -1,10 +1,17 @@
 # Merrick Panes Website
 
-Retro-futurist, mid-century inspired marketing website for Merrick Panes.
+This version positions the business around seven outcome-based services:
+
+1. Monthly Business Growth Content
+2. Sports Media Packages
+3. Team and Program Content
+4. Promotional Campaigns
+5. Platform and YouTube Strategy
+6. Analytics and Content Insights
+7. Editing Services
 
 ## Publish on GitHub Pages
-1. Upload all files in this folder to the root of the `merrickpanes-cloud/merrickpanes` repository.
-2. Keep the `CNAME` file in the root.
-3. In GitHub: Settings → Pages → Deploy from branch → `main` / root.
 
-The contact form uses the existing Formspree endpoint already connected to the site.
+Upload every file and folder in this directory to the root of the `merrickpanes` GitHub repository. Keep the `assets` folder beside `index.html`.
+
+The contact form continues to use the existing Formspree endpoint.

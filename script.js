@@ -47,3 +47,21 @@ form?.addEventListener('submit', async (event) => {
     button.textContent = originalText;
   }, 3000);
 });
+
+// Preserve basic attribution data with every inquiry.
+const landingPage = document.getElementById('landingPage');
+const referrerField = document.getElementById('referrer');
+if (landingPage) landingPage.value = window.location.href;
+if (referrerField) referrerField.value = document.referrer || 'Direct / unknown';
+
+// Preselect the relevant service when a visitor chooses an audience or audit CTA.
+document.querySelectorAll('[data-service]').forEach(link => {
+  link.addEventListener('click', () => {
+    const select = document.getElementById('serviceSelect');
+    if (!select) return;
+    const requested = link.dataset.service;
+    const exactOption = [...select.options].find(option => option.text === requested);
+    if (exactOption) select.value = exactOption.text;
+    else if (requested.includes('Business')) select.value = 'Monthly Content';
+  });
+});
