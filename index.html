@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Merrick Panes is a Sacramento photographer, videographer, and creative producer creating sports, brand, event, and social media content." />
+  <meta property="og:title" content="Merrick Panes | Photo, Video & Creative Direction" />
+  <meta property="og:description" content="Sacramento-based visual storytelling for athletes, teams, brands, businesses, and events." />
+  <meta property="og:image" content="photo.jpg" />
+  <title>Merrick Panes | Photographer & Videographer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #00563f;
+      --green-dark: #003c2c;
+      --gold: #b59a57;
+      --black: #070a09;
+      --panel: #0e1311;
+      --panel-2: #141a17;
+      --white: #f4f3ed;
+      --muted: #a7afa9;
+      --line: rgba(181,154,87,.28);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(rgba(0,0,0,.56), rgba(0,0,0,.86)),
+        repeating-linear-gradient(90deg, transparent 0 79px, rgba(181,154,87,.025) 80px),
+        repeating-linear-gradient(0deg, transparent 0 79px, rgba(181,154,87,.025) 80px);
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+    h1, h2, h3 { font-family: "Archivo Black", Impact, sans-serif; line-height: .98; text-transform: uppercase; }
+    h2 { font-size: clamp(2.4rem, 6vw, 5.5rem); letter-spacing: -.04em; }
+    .section { padding: 110px 0; }
+    .section-head { display: grid; grid-template-columns: 1fr .8fr; align-items: end; gap: 40px; margin-bottom: 50px; }
+    .section-head p { color: var(--muted); max-width: 570px; justify-self: end; }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      background: rgba(7,10,9,.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { text-decoration: none; font-family: "Archivo Black", sans-serif; letter-spacing: -.04em; font-size: 1.2rem; }
+    .brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 26px; align-items: center; }
+    .nav-links a { text-decoration: none; color: #d6dad7; font-size: .9rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--gold); }
+    .menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--white); padding: 8px 10px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border: 1px solid var(--gold);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .76rem;
+      font-weight: 800;
+      transition: .2s ease;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--gold); color: #0a0b09; }
+    .btn-primary:hover { background: var(--white); border-color: var(--white); transform: translateY(-2px); }
+    .btn-ghost:hover { background: var(--gold); color: #0a0b09; transform: translateY(-2px); }
+
+    .hero { min-height: 100vh; padding-top: 76px; display: grid; align-items: stretch; position: relative; }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; min-height: calc(100vh - 76px); }
+    .hero-copy { display: flex; flex-direction: column; justify-content: center; padding: 70px 7vw 70px max(20px, calc((100vw - var(--max))/2)); }
+    .hero h1 { font-size: clamp(3.3rem, 7.3vw, 8.2rem); margin: 17px 0 24px; letter-spacing: -.065em; max-width: 900px; }
+    .hero h1 .outline { color: transparent; -webkit-text-stroke: 1px var(--gold); }
+    .hero-copy > p { color: #c3c9c4; font-size: clamp(1rem, 1.4vw, 1.24rem); max-width: 650px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+      background: var(--green-dark);
+    }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.08); }
+    .hero-image::after { content:""; position:absolute; inset:0; background: linear-gradient(90deg, var(--black) 0%, transparent 25%), linear-gradient(0deg, rgba(0,86,63,.5), transparent 55%); }
+    .hero-stamp { position: absolute; right: 24px; bottom: 24px; z-index: 2; border: 1px solid var(--gold); padding: 16px; background: rgba(7,10,9,.74); max-width: 220px; }
+    .hero-stamp strong { display:block; font-family: "Archivo Black"; font-size: 1.05rem; text-transform: uppercase; }
+    .hero-stamp span { color: var(--muted); font-size: .78rem; }
+
+    .proof { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--green); }
+    .proof-grid { display: grid; grid-template-columns: repeat(4,1fr); }
+    .proof-item { padding: 26px 22px; border-right: 1px solid rgba(255,255,255,.16); }
+    .proof-item:last-child { border-right: 0; }
+    .proof-item strong { display: block; font-family: "Archivo Black"; font-size: clamp(1.4rem,3vw,2.3rem); line-height:1; }
+    .proof-item span { font-size: .72rem; text-transform: uppercase; letter-spacing: .13em; color: #d9e5df; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .service-card { position: relative; padding: 34px; min-height: 315px; border: 1px solid var(--line); background: linear-gradient(145deg, var(--panel-2), var(--panel)); overflow: hidden; }
+    .service-card::before { content: attr(data-num); position: absolute; top: 18px; right: 24px; font-family: "Archivo Black"; font-size: 5rem; color: rgba(181,154,87,.07); }
+    .service-card h3 { font-size: clamp(1.65rem,3vw,2.7rem); margin: 62px 0 18px; max-width: 420px; }
+    .service-card p { color: var(--muted); max-width: 510px; }
+    .price { margin-top: 28px; color: var(--gold); font-weight: 700; font-size: .85rem; text-transform: uppercase; letter-spacing: .11em; }
+
+    .work-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; }
+    .project { border: 1px solid var(--line); background: var(--panel); overflow: hidden; }
+    .video-wrap { aspect-ratio: 16/9; background:#000; }
+    .video-wrap iframe { width:100%; height:100%; border:0; }
+    .project-copy { padding: 24px; }
+    .project-copy h3 { font-size: 1.55rem; margin-bottom: 8px; }
+    .project-copy p { color: var(--muted); font-size: .92rem; }
+    .project-tag { display:inline-block; color: var(--gold); text-transform:uppercase; letter-spacing:.12em; font-size:.67rem; font-weight:700; margin-bottom:12px; }
+
+    .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: center; }
+    .portrait { position:relative; border:1px solid var(--line); background:var(--green-dark); }
+    .portrait img { width:100%; aspect-ratio:4/5; object-fit:cover; filter: grayscale(100%) contrast(1.1); }
+    .portrait::after { content:"Made for greatness"; position:absolute; left:-20px; bottom:24px; background:var(--gold); color:#090a08; padding:10px 15px; text-transform:uppercase; font-weight:900; letter-spacing:.08em; font-size:.72rem; }
+    .about-copy h2 { margin: 12px 0 28px; }
+    .about-copy p { color: var(--muted); margin-bottom: 18px; font-size: 1.02rem; }
+    .values { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:32px; }
+    .value { border-top:1px solid var(--gold); padding-top:12px; }
+    .value strong { display:block; text-transform:uppercase; font-size:.8rem; margin-bottom:4px; }
+    .value span { color:var(--muted); font-size:.78rem; }
+
+    .process-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .step { padding:28px; border-top:2px solid var(--gold); background:var(--panel); }
+    .step-num { font-family:"Archivo Black"; font-size:3rem; color:var(--green); }
+    .step h3 { font-size:1.35rem; margin:16px 0 10px; }
+    .step p { color:var(--muted); font-size:.9rem; }
+
+    .contact-section { background: linear-gradient(135deg, var(--green-dark), #08110d 60%); border-top:1px solid var(--line); }
+    .contact-grid { display:grid; grid-template-columns:.82fr 1.18fr; gap:70px; }
+    .contact-copy h2 { margin:12px 0 25px; }
+    .contact-copy p { color:#c6d0ca; max-width:480px; }
+    .contact-list { margin-top:32px; display:grid; gap:12px; }
+    .contact-list a { text-decoration:none; color:var(--white); }
+    .contact-list a:hover { color:var(--gold); }
+    form { background:rgba(7,10,9,.75); border:1px solid var(--line); padding:30px; }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .field { display:grid; gap:7px; }
+    .field.full { grid-column:1/-1; }
+    label { color:#d8ddd9; font-size:.7rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700; }
+    input, select, textarea { width:100%; border:1px solid rgba(255,255,255,.15); background:#0d1210; color:var(--white); padding:13px 14px; font:inherit; }
+    input:focus, select:focus, textarea:focus { outline:1px solid var(--gold); border-color:var(--gold); }
+    textarea { min-height:140px; resize:vertical; }
+    .submit-row { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:18px; }
+    .form-message { font-size:.83rem; color:#cdd7d1; }
+
+    footer { padding:28px 0; border-top:1px solid var(--line); }
+    .footer-inner { display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:.8rem; }
+    .footer-links { display:flex; gap:18px; }
+    .footer-links a { text-decoration:none; }
+    .footer-links a:hover { color:var(--gold); }
+
+    @media (max-width: 900px) {
+      .nav-links { display:none; position:absolute; top:76px; left:0; right:0; background:var(--black); padding:20px; flex-direction:column; align-items:flex-start; border-bottom:1px solid var(--line); }
+      .nav-links.open { display:flex; }
+      .menu-btn { display:block; }
+      .hero-grid, .section-head, .about-grid, .contact-grid { grid-template-columns:1fr; }
+      .hero-copy { padding:70px 20px; }
+      .hero-image { min-height:520px; }
+      .proof-grid { grid-template-columns:1fr 1fr; }
+      .proof-item:nth-child(2) { border-right:0; }
+      .proof-item:nth-child(-n+2) { border-bottom:1px solid rgba(255,255,255,.16); }
+      .services-grid, .work-grid { grid-template-columns:1fr; }
+      .section-head p { justify-self:start; }
+      .values, .process-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width: 580px) {
+      .container { width:min(var(--max), calc(100% - 24px)); }
+      .section { padding:76px 0; }
+      .hero h1 { font-size:clamp(3rem,16vw,5.2rem); }
+      .hero-image { min-height:430px; }
+      .proof-grid { grid-template-columns:1fr; }
+      .proof-item { border-right:0; border-bottom:1px solid rgba(255,255,255,.16); }
+      .services-grid { gap:10px; }
+      .service-card { padding:24px; }
+      .form-grid { grid-template-columns:1fr; }
+      form { padding:20px; }
+      .footer-inner { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">MERRICK<span> PANES</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">MENU</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a class="btn btn-primary" href="#contact">Book a Project</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Sacramento Photographer + Videographer</span>
+          <h1>Content built to <span class="outline">get you noticed.</span></h1>
+          <p>Documentary-style photography and video for athletes, teams, businesses, brands, and events—created with purpose and delivered ready to use.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Book a Project</a>
+            <a class="btn btn-ghost" href="#work">View My Work</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="photo.jpg" alt="Merrick Panes, Sacramento photographer and videographer" />
+          <div class="hero-stamp">
+            <strong>Made for Greatness</strong>
+            <span>Creative direction • photo • video • strategy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof">
+      <div class="container proof-grid">
+        <div class="proof-item"><strong>3.5M+</strong><span>YouTube views generated</span></div>
+        <div class="proof-item"><strong>D1</strong><span>Football storytelling</span></div>
+        <div class="proof-item"><strong>SAC</strong><span>Sacramento based</span></div>
+        <div class="proof-item"><strong>FULL</strong><span>Production from plan to delivery</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">What I create</span><h2>Services</h2></div>
+          <p>Every project is designed around what the content needs to accomplish—not just how it looks. Choose a starting point and I’ll help shape the right production.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card" data-num="01">
+            <span class="eyebrow">Athletes + Teams</span>
+            <h3>Sports Content</h3>
+            <p>Game coverage, athlete branding, recruiting videos, team media days, documentaries, and social content.</p>
+            <div class="price">Starting at $197</div>
+          </article>
+          <article class="service-card" data-num="02">
+            <span class="eyebrow">Brands + Businesses</span>
+            <h3>Brand Content</h3>
+            <p>Photography, short-form video, campaign assets, and visual storytelling for websites and social media.</p>
+            <div class="price">Starting at $150</div>
+          </article>
+          <article class="service-card" data-num="03">
+            <span class="eyebrow">Live Experiences</span>
+            <h3>Event Coverage</h3>
+            <p>Professional photography and highlight video coverage for community, corporate, sports, and private events.</p>
+            <div class="price">Starting at $100/hour</div>
+          </article>
+          <article class="service-card" data-num="04">
+            <span class="eyebrow">Consistent Growth</span>
+            <h3>Monthly Content</h3>
+            <p>Recurring photo and video production for businesses that need a reliable stream of strategic content.</p>
+            <div class="price">Starting at $399/month</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work" style="background:#090d0b;">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Selected projects</span><h2>Featured Work</h2></div>
+          <p>Real stories, real people, and production built around the energy of the moment.</p>
+        </div>
+        <div class="work-grid">
+          <article class="project">
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/YXo_zzMuf7s" title="Sacramento football project" loading="lazy" allowfullscreen></iframe></div>
+            <div class="project-copy"><span class="project-tag">Sports Documentary</span><h3>Sacramento Football</h3><p>Behind-the-scenes access, athlete stories, and cinematic game-day coverage built for digital audiences.</p></div>
+          </article>
+          <article class="project">
+            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/0BrJmXFcDho" title="DVC Football project" loading="lazy" allowfullscreen></iframe></div>
+            <div class="project-copy"><span class="project-tag">Team Storytelling</span><h3>DVC Football TV</h3><p>Long-form team content designed to strengthen culture, recruiting, and fan connection.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="portrait"><img src="photo.jpg" alt="Portrait of Merrick Panes" /></div>
+        <div class="about-copy">
+          <span class="eyebrow">About Merrick</span>
+          <h2>Story first. Always.</h2>
+          <p>I’m a Sacramento-based photographer, videographer, and creative producer with experience building sports media platforms, documenting athletes, and helping businesses communicate through strong visual content.</p>
+          <p>My approach blends documentary storytelling with strategy. The goal is not to make content that simply fills a feed—it is to create work that builds trust, captures identity, and moves people to act.</p>
+          <div class="values">
+            <div class="value"><strong>Strategic</strong><span>Built around a clear goal.</span></div>
+            <div class="value"><strong>Authentic</strong><span>Real moments over forced content.</span></div>
+            <div class="value"><strong>Ready to use</strong><span>Delivered for your platforms.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process" style="background:#090d0b;">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Simple and organized</span><h2>The Process</h2></div>
+          <p>A clear production workflow keeps your project moving and makes sure the final content matches the goal.</p>
+        </div>
+        <div class="process-grid">
+          <div class="step"><div class="step-num">01</div><h3>Submit Your Project</h3><p>Share your date, goals, location, and the type of content you need.</p></div>
+          <div class="step"><div class="step-num">02</div><h3>Receive Your Plan</h3><p>You receive a recommended scope, pricing, agreement, and production plan.</p></div>
+          <div class="step"><div class="step-num">03</div><h3>Create + Deliver</h3><p>We produce the work, complete the edits, and deliver the final assets online.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <span class="eyebrow">Now booking</span>
+          <h2>Let’s make something people remember.</h2>
+          <p>Tell me about your project and I’ll respond with the best next step based on your goals, timeline, and budget.</p>
+          <div class="contact-list">
+            <a href="mailto:merrick.panes@gmail.com">merrick.panes@gmail.com</a>
+            <a href="https://www.instagram.com/merrickspanes/" target="_blank" rel="noreferrer">Instagram: @merrickspanes</a>
+            <span>Sacramento, California</span>
+          </div>
+        </div>
+
+        <form action="https://formspree.io/f/xeevyozg" method="POST" id="contactForm">
+          <div class="form-grid">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" required /></div>
+            <div class="field"><label for="email">Email</label><input id="email" type="email" name="email" required /></div>
+            <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" name="phone" /></div>
+            <div class="field"><label for="organization">Business / Team</label><input id="organization" name="organization" /></div>
+            <div class="field"><label for="service">Service</label><select id="service" name="service" required><option value="">Select one</option><option>Sports Content</option><option>Brand Content</option><option>Event Coverage</option><option>Monthly Content</option><option>Editing</option><option>Other</option></select></div>
+            <div class="field"><label for="budget">Estimated Budget</label><select id="budget" name="budget"><option value="">Select range</option><option>Under $200</option><option>$200–$499</option><option>$500–$999</option><option>$1,000–$2,499</option><option>$2,500+</option></select></div>
+            <div class="field"><label for="date">Preferred Date</label><input id="date" type="date" name="preferred_date" /></div>
+            <div class="field"><label for="location">Location</label><input id="location" name="location" placeholder="City or venue" /></div>
+            <div class="field full"><label for="message">Project Details</label><textarea id="message" name="message" required placeholder="What are you creating, who is it for, and what should the content accomplish?"></textarea></div>
+            <div class="field full"><label for="source">How did you hear about me?</label><input id="source" name="referral_source" /></div>
+          </div>
+          <div class="submit-row">
+            <button class="btn btn-primary" type="submit" id="submitBtn">Request Availability</button>
+            <span class="form-message" id="formMessage">Typical response time: 1–2 business days.</span>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Merrick Panes. Made for Greatness.</span>
+      <div class="footer-links"><a href="https://www.instagram.com/merrickspanes/" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.youtube.com/@sacramentofootballtv" target="_blank" rel="noreferrer">YouTube</a><a href="https://www.linkedin.com/in/merrick-panes-762008147/" target="_blank" rel="noreferrer">LinkedIn</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formMessage = document.getElementById('formMessage');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      formMessage.textContent = '';
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!response.ok) throw new Error('Submission failed');
+        form.reset();
+        formMessage.textContent = 'Thank you—your project request was sent.';
+      } catch (error) {
+        formMessage.textContent = 'There was a problem. Please email or DM Merrick directly.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Request Availability';
+      }
+    });
+  </script>
+</body>
+</html>
