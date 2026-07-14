@@ -67,62 +67,20 @@ document.querySelectorAll('[data-service]').forEach(link => {
 });
 
 
-// Audience-based pricing reveal
-const pricingAudience = document.getElementById("pricingAudience");
-const pricingGroups = document.querySelectorAll(".pricing-group");
-const pricingEmptyState = document.getElementById("pricingEmptyState");
-const pricingAddons = document.getElementById("pricingAddons");
-
-function updatePricingDisplay(value) {
-  let visibleCount = 0;
-
-  pricingGroups.forEach((group) => {
-    const audiences = (group.dataset.audience || "").split(/\s+/);
-    const show = value === "all" || (value && audiences.includes(value));
-    group.classList.toggle("is-visible", Boolean(show));
-    if (show) visibleCount += 1;
-  });
-
-  if (pricingEmptyState) {
-    pricingEmptyState.hidden = Boolean(value);
-  }
-
-  if (pricingAddons) {
-    pricingAddons.classList.toggle("is-visible", Boolean(value));
-  }
-}
-
-if (pricingAudience) {
-  updatePricingDisplay(pricingAudience.value);
-  pricingAudience.addEventListener("change", (event) => {
-    updatePricingDisplay(event.target.value);
-  });
-}
-
-// Service links can preselect the closest pricing audience.
-const pricingAudienceMap = {
-  "Monthly Business Growth Content": "business",
-  "Sports Media Package": "sports",
-  "Team / Program Content": "sports",
-  "Team / Season Partnership": "sports",
-  "Promotional Campaign": "events",
-  "Real Estate Marketing": "real-estate",
-  "Platform / YouTube Strategy": "creators",
-  "Analytics / Content Insights": "creators",
-  "Editing Services": "editing",
-  "Photography": "photography"
-};
-
-document.querySelectorAll('a[href="#pricing"][data-service], a[href="#sports-pricing"], a[href="#real-estate-pricing"]').forEach((link) => {
+// Preselect the requested service when an embedded pricing CTA is clicked.
+document.querySelectorAll("[data-service]").forEach((link) => {
   link.addEventListener("click", () => {
-    let selection = pricingAudienceMap[link.dataset.service];
+    const serviceSelect = document.getElementById("serviceSelect");
+    const requestedService = link.dataset.service;
 
-    if (link.getAttribute("href") === "#sports-pricing") selection = "sports";
-    if (link.getAttribute("href") === "#real-estate-pricing") selection = "real-estate";
+    if (!serviceSelect || !requestedService) return;
 
-    if (pricingAudience && selection) {
-      pricingAudience.value = selection;
-      updatePricingDisplay(selection);
+    const option = Array.from(serviceSelect.options).find(
+      (item) => item.text === requestedService || item.value === requestedService
+    );
+
+    if (option) {
+      serviceSelect.value = option.value || option.text;
     }
   });
 });

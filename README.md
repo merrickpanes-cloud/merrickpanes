@@ -57,3 +57,33 @@ Visitors can select:
 - All pricing
 
 Only matching packages are revealed. The full pricing wall is hidden until the visitor chooses a need.
+
+
+## Goal-based sales update
+
+Public package pricing has been removed from the main website experience.
+
+The new Solutions section asks visitors what they want to accomplish and reveals:
+- The problem Merrick can help solve
+- Relevant services
+- Possible deliverables
+- A custom recommendation call to action
+
+The inquiry form retains budget ranges so scope can be adjusted to the client's investment.
+
+
+## Embedded pricing dropdown update
+
+The separate service-selection section was removed.
+
+Each service card now contains its own expandable pricing dropdown:
+- Monthly growth partnerships
+- Sports
+- Teams and programs
+- Promotional campaigns
+- Real estate
+- Platforms and YouTube
+- Analytics and insights
+- Editing
+
+The contact buttons inside each dropdown preselect the matching service in the inquiry form.
