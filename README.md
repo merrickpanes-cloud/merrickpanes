@@ -8,10 +8,35 @@ This version positions the business around seven outcome-based services:
 4. Promotional Campaigns
 5. Platform and YouTube Strategy
 6. Analytics and Content Insights
-7. Editing Services
+7. Real Estate Marketing
+8. Editing Services
 
 ## Publish on GitHub Pages
 
 Upload every file and folder in this directory to the root of the `merrickpanes` GitHub repository. Keep the `assets` folder beside `index.html`.
 
 The contact form continues to use the existing Formspree endpoint.
+
+
+## Monthly Growth Partnership licensing update
+
+The Starter, Growth and Growth Partner packages no longer promise a fixed number of photos.
+
+They now include:
+- Photo Licensing
+- Photo & Media Exclusive Rights
+- The listed number of content sessions and short-form videos
+
+
+## Team & Season Partnerships update
+- Replaced “Tournament content days: $600+” with “Sponsorships: $250+”.
+
+
+## Storytelling reach language update
+
+The website no longer leads with “views generated.”
+
+Updated proof language:
+- 4.5M+ Eyes Reached
+- Stories shared with more than 4.5 million eyes
+- A decade of storytelling across sports, business and digital media
